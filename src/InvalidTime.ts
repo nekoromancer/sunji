@@ -1,7 +1,7 @@
-import Datetime from "./Datetime";
+import { Datetime } from "./Internal";
 import ITimestamp from "./Interfaces/ITimestamp";
 
-export default class InvalidTime<T> extends Datetime implements ITimestamp<T> {
+export class InvalidTime<T> extends Datetime implements ITimestamp<T> {
     public val: T
 
     public constructor (val: T) {
@@ -27,10 +27,6 @@ export default class InvalidTime<T> extends Datetime implements ITimestamp<T> {
 
     public dateMap (): InvalidTime<T> {
         return this;
-    }
-
-    public dateFlatMap (): T {
-        return this.val;
     }
 
     public getDate (): T {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addYears = exports.addMonths = exports.addDays = exports.addHours = exports.addMinutes = exports.addSeconds = exports.asDates = exports.toDates = exports.asHours = exports.toHours = exports.asMinutes = exports.toMinutes = exports.asSeconds = exports.toSeconds = void 0;
+exports.addYears = exports.addMonths = exports.addDays = exports.addHours = exports.addMinutes = exports.addSeconds = exports.addMilliseconds = exports.asDates = exports.toDates = exports.asHours = exports.toHours = exports.asMinutes = exports.toMinutes = exports.asSeconds = exports.toSeconds = void 0;
 const toSeconds = (ms) => ms * 1000;
 exports.toSeconds = toSeconds;
 const asSeconds = (ms) => ms / exports.toSeconds(1);
@@ -17,7 +17,9 @@ const toDates = (ms) => exports.toHours(ms) * 24;
 exports.toDates = toDates;
 const asDates = (ms) => ms / exports.toDates(1);
 exports.asDates = asDates;
-const addSeconds = (secs) => (val) => secs + val;
+const addMilliseconds = (milsecs) => (val) => milsecs + val;
+exports.addMilliseconds = addMilliseconds;
+const addSeconds = (secs) => (val) => exports.toSeconds(secs) + val;
 exports.addSeconds = addSeconds;
 const addMinutes = (mins) => (val) => exports.toMinutes(mins) + val;
 exports.addMinutes = addMinutes;

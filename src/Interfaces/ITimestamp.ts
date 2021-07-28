@@ -1,5 +1,4 @@
-import ValidTime from "../ValidTime";
-import InvalidTime from "../InvalidTime";
+import { ValidTime, InvalidTime } from '../Internal';
 
 export default interface ITimestamp<T> {
     val: T
@@ -7,7 +6,6 @@ export default interface ITimestamp<T> {
     map(fn: (val: number) => number): ValidTime | InvalidTime<T>
     flatMap(fn: (val: number) => number): T
     dateMap(fn: (val: Date) => dateTimeValue): ValidTime | InvalidTime<any>
-    dateFlatMap(fn: (val: Date) => T): T
     getDate(): Date | T
     getDurations(date: ValidTime): number
     orSome<V>(val: V): T | V

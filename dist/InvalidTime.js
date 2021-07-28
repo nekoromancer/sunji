@@ -1,10 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const Datetime_1 = __importDefault(require("./Datetime"));
-class InvalidTime extends Datetime_1.default {
+exports.InvalidTime = void 0;
+const Internal_1 = require("./Internal");
+class InvalidTime extends Internal_1.Datetime {
     constructor(val) {
         super();
         this.val = val;
@@ -24,9 +22,6 @@ class InvalidTime extends Datetime_1.default {
     dateMap() {
         return this;
     }
-    dateFlatMap() {
-        return this.val;
-    }
     getDate() {
         return this.val;
     }
@@ -37,5 +32,5 @@ class InvalidTime extends Datetime_1.default {
         return someVal ? someVal : this.val;
     }
 }
-exports.default = InvalidTime;
+exports.InvalidTime = InvalidTime;
 //# sourceMappingURL=InvalidTime.js.map
