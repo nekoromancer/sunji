@@ -11,6 +11,7 @@
     "outDir": "dist"
   },
   "includes": ["src/**/*"],
+  "exclude": ["test"],
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Recommended"
 }

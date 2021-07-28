@@ -1,0 +1,29 @@
+{
+  "name": "sunji.js",
+  "version": "1.0.0",
+  "description": "Lightweight functional programming style datetime Javascript library",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha \"./test/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekoromancer/sunji.git"
+  },
+  "keywords": [
+    "javascript",
+    "datetime",
+    "functional",
+    "programming"
+  ],
+  "author": "Nekoromancer(nekonitrate@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nekoromancer/sunji/issues"
+  },
+  "homepage": "https://github.com/nekoromancer/sunji#readme",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}
