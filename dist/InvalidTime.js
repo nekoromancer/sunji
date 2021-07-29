@@ -20,7 +20,7 @@ class InvalidTime extends Internal_1.Datetime {
         return this;
     }
     getDurations() {
-        return new Internal_1.Duration(this.val);
+        return Internal_1.Duration.of(null);
     }
     orSome(someVal) {
         return someVal ? someVal : this.val;

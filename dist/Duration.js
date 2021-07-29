@@ -5,6 +5,9 @@ class Duration {
     constructor(val) {
         this.val = val;
     }
+    static of(val) {
+        return new Duration(val);
+    }
     get isValid() {
         return !!this.val;
     }

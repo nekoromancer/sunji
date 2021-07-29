@@ -24,8 +24,8 @@ export class InvalidTime<T> extends Datetime implements ITimestamp<T> {
         return this;
     }
 
-    public getDurations (): Duration<T> {
-        return new Duration(this.val);
+    public getDurations (): Duration<null> {
+        return Duration.of(null);
     }
 
     public orSome<V> (someVal: V): T | V {

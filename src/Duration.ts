@@ -7,6 +7,10 @@ export class Duration<T> implements IDuration<T> {
         this.val = val;
     }
 
+    public static of<V> (val: V): Duration<V> {
+        return new Duration(val);
+    }
+
     public get isValid(): boolean {
         return !!this.val;
     }

@@ -19,8 +19,10 @@ class ValidTime extends Internal_1.Datetime {
     chain(fn) {
         return fn(this.val);
     }
-    getDurations() {
-        return new Internal_1.Duration(this.val);
+    getDurations(date) {
+        return date instanceof ValidTime
+            ? Internal_1.Duration.of(date.chain(v => v - this.val))
+            : Internal_1.Duration.of(null);
     }
     orSome() {
         return this.val;

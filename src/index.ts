@@ -1,2 +1,2 @@
-export { Datetime } from './Internal';
+export { Datetime, Duration } from './Internal';
 
