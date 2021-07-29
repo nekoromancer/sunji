@@ -4,8 +4,11 @@ exports.Datetime = void 0;
 const Internal_1 = require("./Internal");
 class Datetime {
     static of(val) {
-        if ((val instanceof Date && !isNaN(val.getTime())) || !isNaN(new Date(val).getTime())) {
-            return new Internal_1.ValidTime(val);
+        if (val instanceof Date && !isNaN(val.getTime())) {
+            return new Internal_1.ValidTime(val.valueOf());
+        }
+        else if (val !== null && typeof val !== 'undefined' && !isNaN(new Date(val).getTime())) {
+            return new Internal_1.ValidTime(new Date(val).getTime());
         }
         else {
             return new Internal_1.InvalidTime(val);

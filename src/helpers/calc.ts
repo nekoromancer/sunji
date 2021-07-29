@@ -4,13 +4,13 @@ export const toMinutes = (ms: number): number => toSeconds(ms) * 60;
 export const asMinutes = (ms: number): number => ms / toMinutes(1);
 export const toHours = (ms: number): number => toMinutes(ms) * 60;
 export const asHours = (ms: number): number => ms / toHours(1);
-export const toDates = (ms: number): number => toHours(ms) * 24;
-export const asDates = (ms: number): number => ms / toDates(1);
+export const toDays = (ms: number): number => toHours(ms) * 24;
+export const asDays = (ms: number): number => ms / toDays(1);
 export const addMilliseconds = (milsecs: number): ((val: number) => number) => (val: number): number => milsecs + val;
 export const addSeconds = (secs: number): ((val: number) => number) => (val: number): number => toSeconds(secs) + val;
 export const addMinutes = (mins: number): ((val: number) => number) => (val: number): number => toMinutes(mins) + val;
 export const addHours = (hours: number): ((val: number) => number) => (val: number): number => toHours(hours) + val;
-export const addDays = (days: number): ((val: number) => number) => (val: number): number => toDates(days) + val;
+export const addDays = (days: number): ((val: number) => number) => (val: number): number => toDays(days) + val;
 export const addMonths = (months: number): ((val: number) => number) => (val: number): number => {
     const dateTime = new Date(val);
     const monthsAdded = dateTime.getMonth() + months;

@@ -1,1 +1,1 @@
-type dateTimeValue = Date | number | string;
+export type dateTimeValue = Date | number | string;

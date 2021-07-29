@@ -2,8 +2,10 @@ import { ValidTime, InvalidTime } from './Internal';
 
 export class Datetime {
     public static of (val: any): ValidTime | InvalidTime<typeof val> {
-        if ((val instanceof Date && !isNaN(val.getTime())) || !isNaN(new Date(val).getTime())) {
-            return new ValidTime(val);
+        if (val instanceof Date && !isNaN(val.getTime())) {
+            return new ValidTime(val.valueOf());
+        } else if (val !== null && typeof val !== 'undefined' && !isNaN(new Date(val).getTime())) {
+            return new ValidTime(new Date(val).getTime());
         } else {
             return new InvalidTime(val);
         }

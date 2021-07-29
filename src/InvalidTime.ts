@@ -1,5 +1,4 @@
-import { Datetime } from "./Internal";
-import ITimestamp from "./Interfaces/ITimestamp";
+import { Datetime, Duration, ITimestamp } from "./Internal";
 
 export class InvalidTime<T> extends Datetime implements ITimestamp<T> {
     public val: T
@@ -9,32 +8,24 @@ export class InvalidTime<T> extends Datetime implements ITimestamp<T> {
         this.val = val;
     }
 
-    public static of<V> (val: V): InvalidTime<V> {
-        return new InvalidTime<V>(val);
-    }
-
     public get isValid (): boolean {
         return false;
+    }
+
+    public get dateObj (): T {
+        return this.val;
     }
 
     public map (): InvalidTime<T> {
         return this;
     }
 
-    public flatMap (): T {
-        return this.val;
-    }
-
-    public dateMap (): InvalidTime<T> {
+    public chain (): InvalidTime<T> {
         return this;
     }
 
-    public getDate (): T {
-        return this.val;
-    }
-
-    public getDurations (): number {
-        return 0;
+    public getDurations (): Duration<T> {
+        return new Duration(this.val);
     }
 
     public orSome<V> (someVal: V): T | V {

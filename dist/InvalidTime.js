@@ -7,26 +7,20 @@ class InvalidTime extends Internal_1.Datetime {
         super();
         this.val = val;
     }
-    static of(val) {
-        return new InvalidTime(val);
-    }
     get isValid() {
         return false;
+    }
+    get dateObj() {
+        return this.val;
     }
     map() {
         return this;
     }
-    flatMap() {
-        return this.val;
-    }
-    dateMap() {
+    chain() {
         return this;
     }
-    getDate() {
-        return this.val;
-    }
     getDurations() {
-        return 0;
+        return new Internal_1.Duration(this.val);
     }
     orSome(someVal) {
         return someVal ? someVal : this.val;
