@@ -28,6 +28,10 @@ export class InvalidTime<T> extends Datetime implements ITimestamp<T> {
         return Duration.of(null);
     }
 
+    public parse (): InvalidTime<T> {
+        return this;
+    }
+
     public orSome<V> (someVal: V): T | V {
         return someVal ? someVal : this.val;
     }

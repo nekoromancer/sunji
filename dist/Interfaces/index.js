@@ -15,4 +15,5 @@ __exportStar(require("./IFunctor"), exports);
 __exportStar(require("./IValidationCheck"), exports);
 __exportStar(require("./ITimestamp"), exports);
 __exportStar(require("./IDuration"), exports);
+__exportStar(require("./IDatetimeObject"), exports);
 //# sourceMappingURL=index.js.map

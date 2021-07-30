@@ -3,3 +3,4 @@ export * from './IFunctor';
 export * from './IValidationCheck';
 export * from './ITimestamp';
 export * from './IDuration';
+export * from './IDatetimeObject';

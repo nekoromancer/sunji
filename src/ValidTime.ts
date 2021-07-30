@@ -1,4 +1,4 @@
-import {Datetime, Duration, ITimestamp, dateTimeValue, InvalidTime} from './Internal';
+import { Datetime, Duration, ITimestamp, dateTimeValue } from './Internal';
 
 export class ValidTime extends Datetime implements ITimestamp<number> {
     public val: number;
@@ -28,6 +28,10 @@ export class ValidTime extends Datetime implements ITimestamp<number> {
         return date instanceof ValidTime
             ? Duration.of(date.chain(v => v - this.val))
             : Duration.of(null)
+    }
+
+    public parse (parser: (date: Date) => string): string {
+        return parser(new Date(this.val));
     }
 
     public orSome (): number {

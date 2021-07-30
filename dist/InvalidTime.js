@@ -22,6 +22,9 @@ class InvalidTime extends Internal_1.Datetime {
     getDurations() {
         return Internal_1.Duration.of(null);
     }
+    parse() {
+        return this;
+    }
     orSome(someVal) {
         return someVal ? someVal : this.val;
     }

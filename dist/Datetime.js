@@ -8,7 +8,9 @@ class Datetime {
             return new Internal_1.ValidTime(val.valueOf());
         }
         else if (val !== null && typeof val !== 'undefined' && !isNaN(new Date(val).getTime())) {
-            return new Internal_1.ValidTime(new Date(val).getTime());
+            return typeof val === 'number'
+                ? new Internal_1.ValidTime(new Date(val).getTime())
+                : new Internal_1.ValidTime(Date.parse(val));
         }
         else {
             return new Internal_1.InvalidTime(val);

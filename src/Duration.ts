@@ -23,7 +23,7 @@ export class Duration<T> implements IDuration<T> {
         return this.isValid ? fn(this.val) : this;
     }
 
-    orSome<V>(val: V): T | V {
+    orSome<V> (val: V): T | V {
         return this.isValid ? this.val : val;
     }
 }

@@ -1,4 +1,4 @@
-export default interface IDateTimeObject {
+export interface IDatetimeObject {
     year: number,
     month: number,
     date: number,

@@ -24,6 +24,9 @@ class ValidTime extends Internal_1.Datetime {
             ? Internal_1.Duration.of(date.chain(v => v - this.val))
             : Internal_1.Duration.of(null);
     }
+    parse(parser) {
+        return parser(new Date(this.val));
+    }
     orSome() {
         return this.val;
     }

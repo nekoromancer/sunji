@@ -5,7 +5,9 @@ export class Datetime {
         if (val instanceof Date && !isNaN(val.getTime())) {
             return new ValidTime(val.valueOf());
         } else if (val !== null && typeof val !== 'undefined' && !isNaN(new Date(val).getTime())) {
-            return new ValidTime(new Date(val).getTime());
+            return typeof val === 'number'
+                ? new ValidTime(new Date(val).getTime())
+                : new ValidTime(Date.parse(val));
         } else {
             return new InvalidTime(val);
         }
